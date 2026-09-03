@@ -7,5 +7,5 @@ I am developing a game where both technical details and game mechanics may chang
 I will use Managers to control game data and specific game components. Managers will contain the core business logic for their specific areas. This approach makes it painless to remove an entire Manager script or replace it with a new one, since the logic is self-contained.
 
 To ensure Managers remain easy to remove, I follow these rules:
-1. A Manager controls only the data classes that correspond to its specific domain (e.g., the WeatherManager controls only Weather instances and may refer to the World to apply weather parameters, but does not touch other systems).
+1. A Manager controls only the data classes that correspond to its specific domain (e.g., the WeatherManager controls only Weather instances, weather state object and may refer to the World to apply weather parameters, but does not touch other systems).
 2. Ideally, Managers should not directly know about or reference each other to maintain loose coupling and independence.
