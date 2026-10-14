@@ -1,0 +1,37 @@
+
+!theme plain
+
+component World
+
+
+component WeatherManager
+component TimeManager
+
+() EnvironmentParams
+
+WeatherManager -- EnvironmentParams
+TimeManager -- EnvironmentParams
+
+EnvironmentParams -- World
+
+component GameManager 
+
+() Placement
+
+GameManager -- Placement
+Placement -- World
+
+node GameState
+GameState .. World
+
+GameManager -- GameState
+TimeManager -- GameState
+WeatherManager -- GameState
+
+component SaveManager
+
+SaveManager .. GameState
+
+database disk
+
+SaveManager .. disk

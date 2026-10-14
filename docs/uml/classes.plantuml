@@ -1,0 +1,67 @@
+
+@startuml VibeyBloxx_Classes
+!theme plain
+skinparam classAttributeIconSize 0
+
+class GameState {
+    + score: int
+    + current_time: Time
+    + weather_state: WeatherState
+    + world_ref: World
+}
+
+class GameManager
+
+' Building
+
+package building {
+
+class World {
+
+}
+
+class BlockEntity
+
+class Tower
+class Crane
+class EnvironmentParameters
+
+class Sky {
+    + set_top_color(value: Color)
+    + set_horizon_color(value: Color)
+    + set_bottom_color(value: Color)
+    + set_stars_visible(value: bool)
+}
+
+class Town {
+    + set_lights_on(value: bool)
+}
+
+}
+
+' Time
+
+package time {
+
+class TimeManager
+class Time
+
+enum TimeOfDay {
+    MORNING
+    AFTERNOON
+    EVENING
+    NIGHT
+}
+
+}
+
+' Weather
+
+package weather {
+
+class WeatherManager
+class Weather
+
+}
+
+@enduml
